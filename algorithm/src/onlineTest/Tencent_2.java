@@ -26,7 +26,7 @@ public class Tencent_2 {
 			// 计算用A长度后剩余需要的长度
 			long left = (long) (K - i * A); 
 			// 如果剩余长度能被B除尽&所需要B的数量小于Y&剩余长度要大于0
-			if (left % B == 0 & left / B < Y & left > 0) { 
+			if (left % B == 0 && left / B < Y && left > 0) { 
 				// 需要j首B长度的歌
 				double j = left / B;
 				/*
