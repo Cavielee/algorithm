@@ -47,12 +47,11 @@ public class Tencent_2 {
 				// number_A = (long) i;
 				// number_B = (long) j;
 				// 计算该情况的结果并累加到sum
-				sum += Multiply_Denominator(X, number_A) / Multiply_Numerator(number_A, number_A)
-						* Multiply_Denominator(Y, number_B) / Multiply_Numerator(number_B, number_B);
+				sum += Multiply_Numerator(X, number_A) / Multiply_Denominator(number_A, number_A)
+						* Multiply_Numerator(Y, number_B) / Multiply_Denominator(number_B, number_B);
 			}
 		}
 		System.out.println(sum % 1000000007);
-		System.out.println(String.format("%.2f", Math.ceil(4.0/3.3)));
 	}
 
 	/**
