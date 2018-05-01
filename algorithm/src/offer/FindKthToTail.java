@@ -10,6 +10,15 @@ import java.util.ArrayList;
  */
 public class FindKthToTail {
 
+	class ListNode {
+		int val;
+		ListNode next = null;
+
+		ListNode(int val) {
+			this.val = val;
+		}
+	}
+	
 	/**
 	 * Õý½â
 	 * 
@@ -67,21 +76,5 @@ public class FindKthToTail {
 		return second;
 	}
 
-	public static void main(String[] args) {
-		ListNode first = new ListNode(13);
-		ListNode second = new ListNode(14);
-		ListNode third = new ListNode(15);
-		first.next = second;
-		second.next = third;
-		System.out.println(new FindKthToTail().findKthToTail(first, 1).val);
-	}
 }
 
-class ListNode {
-	int val;
-	ListNode next = null;
-
-	ListNode(int val) {
-		this.val = val;
-	}
-}
