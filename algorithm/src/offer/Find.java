@@ -1,5 +1,10 @@
 package offer;
 
+/**
+ * 1.有序二维数组查找
+ * @author Cavielee
+ *
+ */
 public class Find {
 	static boolean find_1(int target, int[][] array) {
 		/**
