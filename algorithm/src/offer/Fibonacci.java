@@ -13,23 +13,41 @@ package offer;
  */
 public class Fibonacci {
 
+	/**
+	 * 时间复杂度O(n)
+	 * 从后往前算
+	 */
 	public int fibonacci(int n) {
-		int first = 0;
-		int second = 1;
-		int third = 0;
-
-		if (n == 0) {
+		if (n <= 0) 
 			return 0;
-		}
-		if (n == 1 || n == 2) {
+		if (n == 1 || n == 2)
 			return 1;
-		}
-		while (n-- > 1) {
-			third = first + second;
+		
+		int first = 1;
+		int second = 1;
+		int result = 0;
+		
+		for (int i = 2; i < n; i++) {
+			result = first + second;
 			first = second;
-			second = third;
+			second = result;
 		}
-		return third;
+		
+		return result;
+	}
+	
+	/**
+	 * 时间复杂度O(n^2)
+	 * 从上往下，递归算法
+	 * 缺点，由于从上往下，n越大，重复计算的项越多。
+	 */
+	public int fibonacci_1(int n) {
+		if (n <= 0) 
+			return 0;
+		if (n == 1 || n == 2)
+			return 1;
+		
+		return fibonacci_1(n - 1) + fibonacci_1(n - 2);
 	}
 
 	public static void main(String[] args) {

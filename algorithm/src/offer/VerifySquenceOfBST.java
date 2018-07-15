@@ -8,7 +8,7 @@ package offer;
 public class VerifySquenceOfBST {
 
 	public boolean verifySquenceOfBST(int[] sequence) {
-		if (sequence.length == 0) {
+		if (sequence.length == 0 || sequence == null) {
 			return false;
 		} else {
 			return isBST(sequence, 0, sequence.length - 1);

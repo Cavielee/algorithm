@@ -72,7 +72,8 @@ public class FindPath {
 		t1.right = t3;
 		t2.left = t4;
 		t2.right = t5;
-		new FindPath().findPath(t1, 22);
+		ArrayList<ArrayList<Integer>> list = new FindPath().findPath(t1, 22);
+		System.out.println(list);
 	}
 
 }

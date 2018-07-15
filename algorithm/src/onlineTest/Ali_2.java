@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 字符串去重
+ * 没有AC
  * 输入：阿里巴巴我要退款我要退款，还不给我退款给我退款
  * 输出：阿里巴巴我要退款，还不给我退款
  * @author Cavielee

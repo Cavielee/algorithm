@@ -13,6 +13,10 @@ package offer;
  */
 public class JumpFloor {
 
+	/**
+	 * 时间复杂度O(n)
+	 * 从后往前算
+	 */
 	public int jumpFloor(int target) {
 		if (target <= 0)
 			return 0;
@@ -20,14 +24,30 @@ public class JumpFloor {
 			return 1;
 		if (target == 2)
 			return 2;
-		int one = 1;
-		int two = 2;
+		
+		int first = 1;
+		int second = 2;
 		int result = 0;
 		for (int i = 2; i < target; i++) {
-			result = one + two;
-			one = two;
-			two = result;
+			result = first + second;
+			first = second;
+			second = result;
 		}
 		return result;
+	}
+	/**
+	 * 时间复杂度O(n^2)
+	 * 从上往下，递归算法
+	 * 缺点，由于从上往下，n越大，重复计算的项越多。
+	 */
+	public int jumpFloor_1(int target) {
+		if (target <= 0)
+			return 0;
+		if (target == 1)
+			return 1;
+		if (target == 2)
+			return 2;
+		
+		return jumpFloor_1(target - 1) + jumpFloor_1(target - 2);
 	}
 }
