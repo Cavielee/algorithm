@@ -107,37 +107,31 @@ public class GetLeastNumbers_Solution {
 		if (array == null || array.length == 0 || k <= 0 || k > array.length)
 			return list;
 		// 建立TreeSet（红黑树）
-		new TreeSet<Integer>();
-		// 建立PriorityQueue（即最大堆）
-		PriorityQueue<Integer> maxheap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
+		TreeSet<Integer> ts = new TreeSet<Integer>();
 
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return o2.compareTo(o1);
-			}
-		});
-
-		// 遍历每一个元素
 		for (int i = 0; i < array.length; i++) {
-			// 当还没有k个元素时，直接添加
-			if (maxheap.size() != k)
-				maxheap.offer(array[i]);
-			// 当有k个元素时，则和最大元素（队列顶部）相比,比最大元素小则删除后添加
+			// 添加前k个数
+			if (i < k) {
+				ts.add(array[i]);
+			}
+
+			// 后面继续添加剩余的，每次添加前都和TreeSet中最大的比较，小于则添加
 			else {
-				if (maxheap.peek() > array[i]) {
-					maxheap.poll();
-					maxheap.offer(array[i]);
+				if (array[i] < ts.last()) {
+					ts.pollLast();
+					ts.add(array[i]);
 				}
 			}
 		}
-		list.addAll(maxheap);
+
+		list.addAll(ts);
 		return list;
 	}
 
 	public static void main(String[] args) {
-		int[] array = new int[] { 4, 6, 8, 9, 10 };
-		new GetLeastNumbers_Solution().getLeastNumber_Solution_2(array, 5);
-
+		int[] array = new int[] { 8, 6, 9, 10, 4 };
+		ArrayList<Integer> list = new GetLeastNumbers_Solution().getLeastNumber_Solution_3(array, 3);
+		System.out.println(list);
 	}
 
 }
