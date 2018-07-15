@@ -5,6 +5,11 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.TreeSet;
 
+/**
+ * 30.查找数组中最小k个数
+ * @author Cavielee
+ *
+ */
 public class GetLeastNumbers_Solution {
 
 	// 基于快排实现
